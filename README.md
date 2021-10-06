@@ -1,14 +1,11 @@
-#  Mastodon Glitch Edition  #
+# Fedimint
 
->   Now with automated deploys!
+A general-purpose microblogging server.
 
-[![Build Status](https://img.shields.io/circleci/project/github/glitch-soc/mastodon.svg)][circleci]
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/glitch-soc/mastodon.svg)][code_climate]
+## Credits
 
-[circleci]: https://circleci.com/gh/glitch-soc/mastodon
-[code_climate]: https://codeclimate.com/github/glitch-soc/mastodon
+- The maintainers of [Glitchsoc](https://github.com/glitch-soc/mastodon)
 
-So here's the deal: we all work on this code, and then it runs on dev.glitch.social and anyone who uses that does so absolutely at their own risk. can you dig it?
+## License
 
-- You can view documentation for this project at [glitch-soc.github.io/docs/](https://glitch-soc.github.io/docs/).
-- And contributing guidelines are available [here](CONTRIBUTING.md) and [here](https://glitch-soc.github.io/docs/contributing/).
+This is licensed under the [AGPL license](LICENSE).

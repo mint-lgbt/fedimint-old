@@ -7,7 +7,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DB_NAME'] || 'mastodon_development' %>
+  database: <%= ENV['DB_NAME'] || 'fedimint_development' %>
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASS'] %>
   host: <%= ENV['DB_HOST'] %>
@@ -18,7 +18,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['DB_NAME'] || 'mastodon' %>_test<%= ENV['TEST_ENV_NUMBER'] %>
+  database: <%= ENV['DB_NAME'] || 'fedimint' %>_test<%= ENV['TEST_ENV_NUMBER'] %>
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASS'] %>
   host: <%= ENV['DB_HOST'] %>
@@ -26,8 +26,8 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['DB_NAME'] || 'mastodon_production' %>
-  username: <%= ENV['DB_USER'] || 'mastodon' %>
+  database: <%= ENV['DB_NAME'] || 'fedimint_production' %>
+  username: <%= ENV['DB_USER'] || 'fedimint' %>
   password: <%= ENV['DB_PASS'] || '' %>
   host: <%= ENV['DB_HOST'] || 'localhost' %>
   port: <%= ENV['DB_PORT'] || 5432 %>
