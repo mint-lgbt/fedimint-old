@@ -70,6 +70,9 @@ aliases:
             command: ruby -e 'puts RUBY_VERSION' | tee /tmp/.ruby-version
         - *restore_ruby_dependencies
         - run:
+            name: Update bundler
+            command: gem install bundler
+        - run:
             name: Set bundler settings
             command: |
               bundle config --local clean 'true'
