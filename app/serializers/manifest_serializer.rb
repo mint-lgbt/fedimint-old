@@ -28,15 +28,20 @@ class ManifestSerializer < ActiveModel::Serializer
         sizes: '192x192',
         type: 'image/png',
       },
+      {
+        src: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
     ]
   end
 
   def theme_color
-    '#282c37'
+    '#1c331b'
   end
 
   def background_color
-    '#191b22'
+    '#1c331b'
   end
 
   def display
