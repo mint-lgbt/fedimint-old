@@ -1,4 +1,4 @@
-# Fedimint
+# Fedimint [![CircleCI](https://img.shields.io/circleci/build/gh/mint-lgbt/fedimint)](https://circleci.com/gh/mint-lgbt/fedimint)
 
 A general-purpose microblogging server.
 
