@@ -1,23 +1,23 @@
 en:
   flavours:
     glitch:
-      description: The default flavour for GlitchSoc instances.
-      name: Glitch Edition
+      description: The default flavour for Fedimint instances.
+      name: Fedimint
   skins:
     glitch:
       default: Default
 pl:
   flavours:
     glitch:
-      description: Domyślny motyw instancji GlitchSoc.
+      description: Domyślny motyw instancji Fedimint.
   skins:
     glitch:
       default: Domyślny
 es:
   flavours:
     glitch:
-      description: El diseño predeterminado para las instancias con GlitchSoc.
-      name: Glitchsoc
+      description: El diseño predeterminado para las instancias con Fedimint.
+      name: Fedimint
   skins:
     glitch:
       default: Predeterminado

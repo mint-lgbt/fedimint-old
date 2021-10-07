@@ -1,24 +1,24 @@
 en:
   flavours:
     vanilla:
-      description: The theme used by vanilla Mastodon instances. This theme might not support all of the features of GlitchSoc.
-      name: Vanilla Mastodon
+      description: The theme used by vanilla Fedimint instances.
+      name: Vanilla Fedimint
   skins:
     vanilla:
       default: Default
 pl:
   flavours:
     vanilla:
-      description: Motyw używany przez instancje czystego Mastodona. Może nie obsługiwać wszystkich funkcji GlitchSoc.
-      name: Mastodon Vanilla
+      description: Motyw używany przez instancje czystego Mastodona.
+      name: Fedimint Vanilla
   skins:
     vanilla:
       default: Domyślny
 es:
   flavours:
     vanilla:
-      description: El diseño predeterminado en las instancias de Mastodon. Puede que no soporte todas las características de GlitchSoc.
-      name: Mastodon Original
+      description: El diseño predeterminado en las instancias de Fedimint.
+      name: Fedimint Original
   skins:
     vanilla:
       default: Predeterminado
