@@ -105,10 +105,10 @@ module AccountsHelper
   end
 
   def svg_logo
-    content_tag(:svg, tag(:use, 'xlink:href' => '#mastodon-svg-logo'), 'viewBox' => '0 0 216.4144 232.00976')
+    raw render file: Rails.root.join('app/javascript/images/logo_transparent.svg')
   end
 
   def svg_logo_full
-    content_tag(:svg, tag(:use, 'xlink:href' => '#mastodon-svg-logo-full'), 'viewBox' => '0 0 713.35878 175.8678')
+    raw render file: Rails.root.join('app/javascript/images/logo_full.svg')
   end
 end
