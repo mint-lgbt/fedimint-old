@@ -125,13 +125,6 @@ jobs:
     <<: *defaults
     <<: *install_ruby_dependencies
 
-  install-ruby2.6:
-    <<: *defaults
-    docker:
-      - image: circleci/ruby:2.6-buster-node
-        environment: *ruby_environment
-    <<: *install_ruby_dependencies
-
   install-ruby3.0:
     <<: *defaults
     docker:
@@ -185,18 +178,6 @@ jobs:
       - image: circleci/redis:5-alpine
     <<: *test_steps
 
-  test-ruby2.6:
-    <<: *defaults
-    docker:
-      - image: circleci/ruby:2.6-buster-node
-        environment: *ruby_environment
-      - image: circleci/postgres:12.2
-        environment:
-          POSTGRES_USER: root
-          POSTGRES_HOST_AUTH_METHOD: trust
-      - image: circleci/redis:5-alpine
-    <<: *test_steps
-
   test-ruby3.0:
     <<: *defaults
     docker:
@@ -227,10 +208,6 @@ workflows:
       - install-ruby2.7:
           requires:
             - install
-      - install-ruby2.6:
-          requires:
-            - install
-            - install-ruby2.7
       - install-ruby3.0:
           requires:
             - install
@@ -244,10 +221,6 @@ workflows:
       - test-ruby2.7:
           requires:
             - install-ruby2.7
-            - build
-      - test-ruby2.6:
-          requires:
-            - install-ruby2.6
             - build
       - test-ruby3.0:
           requires:
