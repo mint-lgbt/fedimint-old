@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Api::V1::Accounts::StatusesController do
   render_views
 
-  let(:user)  { Fabricate(:user, account: Fabricate(:account, username: 'alice')) }
+  let(:user)  { Fabricate(:user) }
   let(:token) { Fabricate(:accessible_access_token, resource_owner_id: user.id, scopes: 'read:statuses') }
 
   before do
@@ -79,7 +79,7 @@ describe Api::V1::Accounts::StatusesController do
         it 'lists both the public and the private statuses' do
           get :index, params: { account_id: account.id, pinned: true }
           json = body_as_json
-          expect(json.map { |item| item[:id].to_i }.sort).to eq [status.id, private_status.id].sort
+          expect(json.map { |item| item[:id].to_i }).to match_array([status.id, private_status.id])
         end
       end
     end

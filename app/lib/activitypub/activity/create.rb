@@ -94,7 +94,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
     LinkCrawlWorker.perform_in(rand(1..59).seconds, @status.id)
 
     # Distribute into home and list feeds and notify mentioned accounts
-    ::DistributionWorker.perform_async(@status.id, silenced_account_ids: @silenced_account_ids) if @options[:override_timestamps] || @status.within_realtime_window?
+    ::DistributionWorker.perform_async(@status.id, { 'silenced_account_ids' => @silenced_account_ids }) if @options[:override_timestamps] || @status.within_realtime_window?
   end
 
   def find_existing_status
@@ -112,7 +112,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
         url: @status_parser.url || @status_parser.uri,
         account: @account,
         text: converted_object_type? ? converted_text : (@status_parser.text || ''),
-        language: @status_parser.language || detected_language,
+        language: @status_parser.language,
         spoiler_text: converted_object_type? ? '' : (@status_parser.spoiler_text || ''),
         created_at: @status_parser.created_at,
         edited_at: @status_parser.edited_at,
@@ -168,7 +168,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
 
     return unless delivered_to_account.following?(@account)
 
-    FeedInsertWorker.perform_async(@status.id, delivered_to_account.id, :home)
+    FeedInsertWorker.perform_async(@status.id, delivered_to_account.id, 'home')
   end
 
   def delivered_to_account
@@ -368,10 +368,6 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
 
   def converted_text
     Formatter.instance.linkify([@status_parser.title.presence, @status_parser.spoiler_text.presence, @status_parser.url || @status_parser.uri].compact.join("\n\n"))
-  end
-
-  def detected_language
-    LanguageDetector.instance.detect(@status_parser.text, @account) if supported_object_type?
   end
 
   def unsupported_media_type?(mime_type)

@@ -45,6 +45,8 @@ class User < ApplicationRecord
   self.ignored_columns = %w(
     remember_created_at
     remember_token
+    current_sign_in_ip
+    last_sign_in_ip
   )
 
   include Settings::Extend
@@ -241,6 +243,10 @@ class User < ApplicationRecord
     webauthn_credentials.destroy_all if webauthn_enabled?
 
     save!
+  end
+
+  def preferred_posting_language
+    settings.default_language || locale
   end
 
   def setting_default_privacy
