@@ -16,6 +16,7 @@ sv:
     contact: Kontakt
     contact_missing: Inte inställd
     contact_unavailable: Ej tillämplig
+    continue_to_web: Fortsätt till webbtjänst
     discover_users: Upptäck användare
     documentation: Dokumentation
     federation_hint_html: Med ett konto på %{instance} kommer du att kunna följa personer på alla Mastodon-servers och mer än så.
@@ -23,6 +24,8 @@ sv:
     hosted_on: Mastodon-värd på %{domain}
     instance_actor_flash: "Detta konto är en virtuell agent som används för att representera servern själv och inte någon individuell användare. Det används av sammanslutningsskäl och ska inte blockeras såvitt du inte vill blockera hela instansen, och för detta fall ska domänblockering användas. \n"
     learn_more: Lär dig mer
+    logged_in_as_html: Inloggad som %{username}.
+    logout_before_registering: Du är redan inloggad.
     privacy_policy: Integritetspolicy
     rules: Serverns regler
     rules_html: 'Nedan en sammanfattning av kontoreglerna för denna Mastodonserver:'
@@ -67,7 +70,6 @@ sv:
     media: Media
     moved_html: "%{name} har flyttat till %{new_profile_link}:"
     network_hidden: Denna information är inte tillgänglig
-    never_active: Aldrig
     nothing_here: Det finns inget här!
     people_followed_by: Personer som %{name} följer
     people_who_follow: Personer som följer %{name}
@@ -92,7 +94,6 @@ sv:
     account_moderation_notes:
       create: Lämna kommentar
       created_msg: Modereringsnotering skapad utan problem!
-      delete: Radera
       destroyed_msg: Modereringsnotering borttagen utan problem!
     accounts:
       add_email_domain_block: Blockera e-postdomän
@@ -158,6 +159,11 @@ sv:
       not_subscribed: Inte prenumererat
       pending: Inväntar granskning
       perform_full_suspension: Utför full avstängning
+      previous_strikes: Tidigare varningar
+      previous_strikes_description_html:
+        one: Detta konto har <strong>en</strong> varning.
+        other: Detta konto har <strong>%{count}</strong> varningar.
+        zero: Detta konto är <strong>i gott skick</strong>.
       promote: Befordra
       protocol: Protokoll
       public: Offentlig
@@ -185,6 +191,7 @@ sv:
       security_measures:
         only_password: Endast lösenord
         password_and_2fa: Lösenord och 2FA
+        password_and_sign_in_token: Lösenord och e-post token
       sensitive: Känsligt
       sensitized: markerad som känsligt
       shared_inbox_url: Delad inkorg URL
@@ -196,6 +203,7 @@ sv:
       statuses: Status
       strikes: Föregående varningar
       subscribe: Prenumerera
+      suspend: Stäng av
       suspended: Avstängd / Avstängt
       title: Konton
       unblock_email: Avblockera e-postadress
@@ -211,6 +219,7 @@ sv:
       whitelisted: Vitlistad
     action_logs:
       action_types:
+        approve_appeal: Godkänn överklagande
         approve_user: Godkänn användare
         assigned_to_self_report: Tilldela anmälan
         change_email_user: Ändra e-post för användare
@@ -238,6 +247,7 @@ sv:
         enable_user: Aktivera användare
         memorialize_account: Minnesmärk konto
         promote_user: Befordra användare
+        reject_appeal: Avvisa överklagande
         reject_user: Avvisa användare
         remove_avatar_user: Ta bort avatar
         reopen_report: Öppna rapporten igen
@@ -320,7 +330,6 @@ sv:
       enable: Aktivera
       enabled: Aktiverad
       enabled_msg: Aktiverade den emoji utan problem
-      image_hint: PNG upp till 50KB
       list: Lista
       listed: Noterade
       new:
@@ -341,16 +350,14 @@ sv:
       interactions: interaktioner
       media_storage: Medialagring
       new_users: nya användare
-      pending_reports_html:
-        one: "<strong>1</strong> kommande rapport"
-        other: "<strong>%{count}</strong> kommande rapporter"
-      pending_users_html:
-        one: "<strong>1</strong> väntande användare"
-        other: "<strong>%{count}</strong> väntande användare"
       software: Programvara
       space: Utrymmesutnyttjande / Utrymmesanvändning
       title: Kontrollpanel
       website: Hemsida
+    disputes:
+      appeals:
+        empty: Inga överklaganden hittades.
+        title: Överklaganden
     domain_allows:
       add_new: Vitlistedomän
       created_msg: Domänen har vitlistats
@@ -381,30 +388,13 @@ sv:
       reject_media_hint: Raderar lokalt lagrade mediefiler och förhindrar möjligheten att ladda ner något i framtiden. Irrelevant för suspensioner
       reject_reports: Avvisa rapporter
       reject_reports_hint: Ignorera alla rapporter som kommer från den här domänen. Gäller inte för avstängningar
-      rejecting_media: avvisar media-filer
-      rejecting_reports: avvisar rapporter
-      severity:
-        silence: tystad
-        suspend: avstängd
-      show:
-        affected_accounts:
-          one: Ett konto i databasen drabbades
-          other: "%{count} konton i databasen har drabbats"
-        retroactive:
-          silence: Ta bort tysta ner från alla befintliga konton på den här domänen
-          suspend: Ta bort suspendering från alla befintliga konton på den här domänen
-        title: Ångra domänblockering för %{domain}
-        undo: Ångra
       undo: Ångra
       view: Visa domänblock
     email_domain_blocks:
       add_new: Lägg till ny
       created_msg: E-postdomän har lagts till i domänblockslistan utan problem
       delete: Radera
-      destroyed_msg: E-postdomän har tagits bort från domänblockslistan utan problem
       domain: Domän
-      empty: För tillfället inga svartlistade mejl.
-      from_html: från %{domain}
       new:
         create: Skapa domän
         title: Ny E-postdomänblocklistningsinmatning
@@ -423,15 +413,9 @@ sv:
         clear: Rensa leverans-fel
         restart: Starta om leverans
         stop: Stoppa leverans
-        title: Leverans
         unavailable: Ej tillgänglig
-        unavailable_message: Leverans otillgängligt
-        warning: Varning
       delivery_available: Leverans är tillgängligt
       empty: Inga domäner hittades.
-      known_accounts:
-        one: "%{count} känt konto"
-        other: "%{count} kända konton"
       moderation:
         all: Alla
         limited: Begränsad
@@ -511,7 +495,7 @@ sv:
         placeholder: Beskriv vilka åtgärder som vidtagits eller andra uppdateringar till den här anmälan.
         title: Anteckningar
       reopen: Återuppta anmälan
-      report: 'Anmäl #%{id}'
+      report: 'Rapport #%{id}'
       reported_account: Anmält konto
       reported_by: Anmäld av
       resolved: Löst
@@ -619,11 +603,20 @@ sv:
         title: Media
       title: Kontostatus
       with_media: med media
+    strikes:
+      actions:
+        delete_statuses: "%{name} raderade %{target}s inlägg"
+        disable: "%{name} frös %{target}s konto"
+        silence: "%{name} begränsade %{target}s konto"
     system_checks:
       rules_check:
         action: Hantera serverregler
         message_html: Du har inte definierat några serverregler.
     title: Administration
+    trends:
+      statuses:
+        allow: Godkänn inlägg
+        allow_account: Godkänn författare
     warning_presets:
       add_new: Lägg till ny
       delete: Radera
@@ -695,7 +688,6 @@ sv:
     status:
       account_status: Kontostatus
       confirming: Väntar på att e-postbekräftelsen ska slutföras.
-      functional: Ditt konto fungerar som det ska.
       redirecting_to: Ditt konto är inaktivt eftersom det för närvarande dirigeras om till %{acct}.
     too_fast: Formuläret har skickats för snabbt, försök igen.
     trouble_logging_in: Har du problem med att logga in?
@@ -754,6 +746,10 @@ sv:
     directory: Profil-mapp
     explanation: Upptäck användare baserat på deras intressen
     explore_mastodon: Utforska %{title}
+  disputes:
+    strikes:
+      created_at: Daterad
+      status: 'Inlägg #%{id}'
   domain_validator:
     invalid_domain: är inte ett giltigt domännamn
   errors:
@@ -931,7 +927,7 @@ sv:
       title: Ny följefterfrågning
     mention:
       action: Svar
-      body: 'Du nämndes av %{name} in:'
+      body: 'Du nämndes av %{name} i:'
       subject: Du nämndes av %{name}
       title: Ny omnämning
     poll:
@@ -1146,6 +1142,7 @@ sv:
       '2629746': 1 månad
       '31556952': 1 år
       '5259492': 2 månader
+      '604800': 1 vecka
       '63113904': 2 år
       '7889238': 3 månader
     min_age_label: Åldersgräns
@@ -1262,6 +1259,8 @@ sv:
     recovery_instructions_html: Om du någonsin tappar åtkomst till din telefon kan du använda någon av återställningskoderna nedan för att återställa åtkomst till ditt konto. <strong> Håll återställningskoderna säkra </strong>. Du kan till exempel skriva ut dem och lagra dem med andra viktiga dokument.
     webauthn: Säkerhetsnycklar
   user_mailer:
+    appeal_approved:
+      action: Gå till ditt konto
     backup_ready:
       explanation: Du begärde en fullständig säkerhetskopiering av ditt Mastodon-konto. Det är nu klart för nedladdning!
       subject: Ditt arkiv är klart för nedladdning

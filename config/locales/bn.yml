@@ -64,7 +64,6 @@ bn:
     media: ছবি বা ভিডিও
     moved_html: "%{name} চলে গেছে %{new_profile_link} তে:"
     network_hidden: এই তথ্যটি নেই
-    never_active: কখনও না
     nothing_here: এখানে কিছুই নেই!
     people_followed_by: "%{name} যাদেরকে অনুসরণ করে"
     people_who_follow: যারা %{name} কে অনুসরণ করে
@@ -89,7 +88,6 @@ bn:
     account_moderation_notes:
       create: কিছু লিখুন
       created_msg: প্রশাসনবস্তুত লেখাটি সঠিকভাবে তৈরী হয়েছে!
-      delete: মুছে ফেলা
       destroyed_msg: প্রশাসনবস্তুত লেখাটি সঠিকভাবে মুছে ফেলা হয়েছে!
     accounts:
       add_email_domain_block: নিষিদ্ধ করা ই-মেইল ডোমেইন
@@ -236,7 +234,6 @@ bn:
       enable: সক্রিয়
       enabled: সক্রিয়
       enabled_msg: সফলভাবে সেই ইমোজি সক্ষম করা হয়েছে
-      image_hint: ৫০কেবি অবধি পিএনজি
       list: তালিকা
       listed: তালিকাভুক্ত
       new:

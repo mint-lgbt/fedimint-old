@@ -61,7 +61,6 @@ oc:
     media: Mèdias
     moved_html: "%{name} a mudat a %{new_profile_link} :"
     network_hidden: Aquesta informacion es pas disponibla
-    never_active: Jamai
     nothing_here: I a pas res aquí !
     people_followed_by: Lo monde que %{name} sèc
     people_who_follow: Lo monde que sègon %{name}
@@ -86,7 +85,6 @@ oc:
     account_moderation_notes:
       create: Crear una nòta
       created_msg: Nòta de moderacion ben creada !
-      delete: Suprimir
       destroyed_msg: Nòta de moderacion ben suprimida !
     accounts:
       add_email_domain_block: Metre lo domeni del corrièl en lista negra
@@ -267,7 +265,6 @@ oc:
       enable: Activar
       enabled: Activat
       enabled_msg: Aqueste emoji es ben activat
-      image_hint: PNG cap a 50Ko
       list: Listar
       listed: Listat
       new:
@@ -323,30 +320,13 @@ oc:
       reject_media_hint: Lèva los fichièrs gardats localament e regèta las demandas de telecargament dins lo futur. Servís pas a res per las suspensions
       reject_reports: Regetar los senhalaments
       reject_reports_hint: Ignorar totes los senhalaments que venon d’aqueste domeni. Pas pertiment per las suspensions
-      rejecting_media: regeta los fichièrs multimèdias
-      rejecting_reports: regeta los senhalements
-      severity:
-        silence: mes en silenci
-        suspend: suspendut
-      show:
-        affected_accounts:
-          one: Un compte de la basa de donadas tocat
-          other: "%{count} compte de la basa de donadas tocat"
-        retroactive:
-          silence: Levar lo silenci de totes los comptes d’aqueste domeni
-          suspend: Levar la suspension de totes los comptes d’aqueste domeni
-        title: Restablir lo blocatge de domeni de %{domain}
-        undo: Restablir
       undo: Restablir
       view: Veire lo blocatge de domeni
     email_domain_blocks:
       add_new: Ajustar
       created_msg: Blocatge del domeni de corrièl ben plaçat
       delete: Suprimir
-      destroyed_msg: Blocatge del domeni de corrièl ben levat
       domain: Domeni
-      empty: Cap de domeni de corrièl es pas en lista negra actualament.
-      from_html: de %{domain}
       new:
         create: Crear un blocatge
         title: Nòu blocatge de domeni de corrièl
@@ -357,9 +337,6 @@ oc:
     instances:
       by_domain: Domeni
       delivery_available: Liurason disponibla
-      known_accounts:
-        one: "%{count} compte conegut"
-        other: "%{count} comptes coneguts"
       moderation:
         all: Totas
         limited: Limitat
@@ -627,7 +604,6 @@ oc:
       title: Configuracion
     status:
       account_status: Estat del compte
-      functional: Vòstre compte es complètament foncional.
     trouble_logging_in: Problèmas de connexion ?
     use_security_key: Utilizar clau de seguretat
   authorize_follow:
@@ -1054,6 +1030,7 @@ oc:
       '2629746': 1 mes
       '31556952': 1 an
       '5259492': 2 meses
+      '604800': 1 week
       '63113904': 2 ans
       '7889238': 3 meses
   stream_entries:
@@ -1176,7 +1153,6 @@ oc:
       title: Archiu per emportar
     warning:
       reason: 'Motiu :'
-      review_server_policies: Repassar las politicas del servidor
       subject:
         disable: Vòstre compte %{acct} es gelat
         none: Avertiment per %{acct}

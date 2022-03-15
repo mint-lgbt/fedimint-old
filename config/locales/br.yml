@@ -3,6 +3,7 @@ br:
   about:
     about_this: Diàr-benn
     active_count_after: oberiant
+    api: API
     apps: Arloadoù pellgomz
     apps_platforms: Ober get Mastodoñ àr iOS, Android ha savennoù arall
     contact: Darempred
@@ -35,7 +36,6 @@ br:
       other: Heulier·ez
       two: Heulier·ez
     following: O heuliañ
-    never_active: Birviken
     posts:
       few: Toud
       many: Toud
@@ -51,8 +51,6 @@ br:
     unavailable: Profil dihegerz
     unfollow: Diheuliañ
   admin:
-    account_moderation_notes:
-      delete: Dilemel
     accounts:
       by_domain: Domani
       change_email:
@@ -118,16 +116,10 @@ br:
           noop: Hini ebet
           silence: Mudañ
           suspend: Astalañ
-      severity:
-        silence: mudet
-        suspend: astalet
-      show:
-        undo: Dizober
     email_domain_blocks:
       add_new: Ouzhpenniñ unan nevez
       delete: Dilemel
       domain: Domani
-      from_html: eus %{domain}
       new:
         create: Ouzhpenniñ un domani
     instances:

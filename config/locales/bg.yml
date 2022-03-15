@@ -61,7 +61,6 @@ bg:
     media: Мултимедия
     moved_html: "%{name} се премести в %{new_profile_link}:"
     network_hidden: Тази информация не е налична
-    never_active: Никога
     nothing_here: Тук няма никого!
     people_followed_by: Хора, които %{name} следва
     people_who_follow: Хора, които следват %{name}
@@ -85,7 +84,6 @@ bg:
     account_moderation_notes:
       create: Оставяне на бележка
       created_msg: Бележката за модерация е създадена успешно!
-      delete: Изтриване
     accounts:
       add_email_domain_block: Блокиране на имейл домейн
       approve: Одобряване

@@ -25,6 +25,7 @@ el:
       Αυτός ο λογαριασμός είναι εικονικός και απεικονίζει ολόκληρο τον κόμβο, όχι κάποιο συγκεκριμένο χρήστη.
       Χρησιμεύει στη λειτουργία της ομοσπονδίας και δε θα πρέπει να αποκλειστεί, εκτός κι αν είναι επιθυμητός ο αποκλεισμός ολόκληρου του κόμβου. Σε αυτή την περίπτωση θα πρέπει να χρησιμοποιηθεί η λειτουργία αποκλεισμού τομέα.
     learn_more: Μάθε περισσότερα
+    logout_before_registering: Είστε ήδη συνδεδεμένοι.
     privacy_policy: Πολιτική απορρήτου
     rules: Κανόνες διακομιστή
     rules_html: 'Παρακάτω είναι μια σύνοψη των κανόνων που πρέπει να ακολουθήσετε αν θέλετε να έχετε ένα λογαριασμό σε αυτόν τον διακομιστή Mastodon:'
@@ -68,7 +69,6 @@ el:
     media: Πολυμέσα
     moved_html: 'Ο/Η %{name} μετακόμισε στο %{new_profile_link}:'
     network_hidden: Αυτή η πληροφορία δεν είναι διαθέσιμη
-    never_active: Ποτέ
     nothing_here: Δεν υπάρχει τίποτα εδώ!
     people_followed_by: Χρήστες που ακολουθεί ο/η %{name}
     people_who_follow: Χρήστες που ακολουθούν τον/την %{name}
@@ -93,7 +93,6 @@ el:
     account_moderation_notes:
       create: Άφησε σημείωση
       created_msg: Επιτυχής δημιουργία σημειώματος μεσολάβησης!
-      delete: Διαγραφή
       destroyed_msg: Επιτυχής καταστροφή σημειώματος μεσολάβησης!
     accounts:
       add_email_domain_block: Εγγραφή τομέα email σε μαύρη λίστα
@@ -197,6 +196,7 @@ el:
       silenced: Αποσιωπημένοι
       statuses: Καταστάσεις
       subscribe: Εγγραφή
+      suspend: Αναστολή
       suspended: Σε αναστολή
       suspension_irreversible: Τα δεδομένα αυτού του λογαριασμού έχουν διαγραφεί οριστικά. Μπορείς να άρεις την αναστολή του λογαριασμού για να μπορέσει να χρησιμοποιηθεί αλλά αυτό δεν θα επαναφέρει όσα δεδομένα είχε προηγουμένως.
       suspension_reversible_hint_html: Ο λογαριασμός έχει ανασταλλεί και τα δεδομένα του θα διαγραφούν πλήρως στις %{date}. Μέχρι τότε ο λογαριασμός μπορεί να επανέλθει κανονικά. Αν θέλεις να διαγράψεις όλα τα δεδομένα του λογαριασμού, μπορείς να το κάνεις παρακάτω.
@@ -217,6 +217,7 @@ el:
       whitelisted: Εγκεκριμένοι
     action_logs:
       action_types:
+        approve_appeal: Έγκριση Έφεσης
         approve_user: Έγκριση Χρήστη
         assigned_to_self_report: Ανάθεση Αναφοράς
         change_email_user: Αλλαγή email για χρήστη
@@ -244,6 +245,7 @@ el:
         enable_user: Ενεργοποίηση Χρήστη
         memorialize_account: Μετατροπή Λογαριασμού σε Αναμνηστικό
         promote_user: Προαγωγή Χρήστη
+        reject_appeal: Απόρριψη Έφεσης
         reject_user: Απόρριψη Χρήστη
         remove_avatar_user: Αφαίρεση Avatar
         reopen_report: Ξανάνοιγμα Καταγγελίας
@@ -304,7 +306,6 @@ el:
       enable: Ενεργοποίηση
       enabled: Ενεργοποιημένα
       enabled_msg: Επιτυχής ενεργοποίηση αυτού του emoji
-      image_hint: PNG έως 50KB
       list: Εμφάνιση
       listed: Αναφερθέντα
       new:
@@ -321,18 +322,12 @@ el:
       updated_msg: Επιτυχής ενημέρωση του emoji!
       upload: Ανέβασμα
     dashboard:
-      pending_reports_html:
-        one: "<strong>1</strong> εκκρεμής αναφορά"
-        other: "<strong>%{count}</strong> εκκρεμείς αναφορές"
-      pending_tags_html:
-        one: "<strong>1</strong> εκκρεμές hashtag"
-        other: "<strong>%{count}</strong> εκκρεμή hashtag"
-      pending_users_html:
-        one: "<strong>1</strong> χρήστης σε εκκρεμότητα"
-        other: "<strong>%{count}</strong> χρήστες σε εκκρεμότητα"
       software: Λογισμικό
       space: Κατανάλωση χώρου
       title: Ταμπλό
+    disputes:
+      appeals:
+        title: Εφέσεις
     domain_allows:
       add_new: Έγκριση τομέα
       created_msg: Ο τομέας εγκρίθηκε με επιτυχία
@@ -362,30 +357,19 @@ el:
       reject_media_hint: Αφαιρεί τα τοπικά αποθηκευμένα αρχεία πολυμέσων και αποτρέπει τη λήψη άλλων στο μέλλον. Δεν έχει σημασία για τις αναστολές
       reject_reports: Απόρριψη καταγγελιών
       reject_reports_hint: Αγνόηση όσων καταγγελιών προέρχονται από αυτό τον τομέα. Δεν σχετίζεται με τις παύσεις
-      rejecting_media: απορρίπτουν αρχεία πολυμέσων
-      rejecting_reports: απορρίπτουν καταγγελίες
-      severity:
-        silence: αποσιωπημένοι
-        suspend: ανεσταλμένοι
-      show:
-        affected_accounts:
-          one: Επηρεάζεται ένας λογαριασμός στη βάση δεδομένων
-          other: Επηρεάζονται %{count} λογαριασμοί στη βάση δεδομένων
-        retroactive:
-          silence: Αναίρεση αποσιώπησης όλων των λογαριασμός του τομέα
-          suspend: Αναίρεση αναστολής όλων των λογαριασμών του τομέα
-        title: Αναίρεση αποκλεισμού για τον τομέα %{domain}
-        undo: Αναίρεση
       undo: Αναίρεση
       view: Εμφάνιση αποκλεισμού τομέα
     email_domain_blocks:
       add_new: Πρόσθεση νέου
+      attempts_over_week:
+        one: "%{count} προσπάθεια την τελευταία εβδομάδα"
+        other: "%{count} προσπάθειες εγγραφής την τελευταία εβδομάδα"
       created_msg: Επιτυχής πρόσθεση email τομέα σε μαύρη λίστα
       delete: Διαγραφή
-      destroyed_msg: Επιτυχής διαγραφή email τομέα από τη μαύρη λίστα
+      dns:
+        types:
+          mx: Εγγραφή MX
       domain: Τομέας
-      empty: Δεν έχουν οριστεί αποκλεισμένοι τομείς email.
-      from_html: από %{domain}
       new:
         create: Πρόσθεση τομέα
         title: Νέα εγγραφή email στη μαύρη λίστα
@@ -398,9 +382,6 @@ el:
       delivery_available: Διαθέσιμη παράδοση
       destroyed_msg: Τα δεδομένα από το %{domain} βρίσκονται σε αναμονή για επικείμενη διαγραφή.
       empty: Δεν βρέθηκαν τομείς.
-      known_accounts:
-        one: "%{count} γνωστός λογαριασμός"
-        other: "%{count} γνωστοί λογαριασμοί"
       moderation:
         all: Όλα
         limited: Περιορισμένα
@@ -477,10 +458,11 @@ el:
       comment:
         none: Κανένα
       created_at: Καταγγέλθηκε
-      delete_and_resolve: Διαγραφή και επίλυση
+      delete_and_resolve: Διαγραφή δημοσιεύσεων
       forwarded: Προωθημένα
       forwarded_to: Προώθημένα προς %{domain}
       mark_as_resolved: Σημειωμένο ως επιλυμένο
+      mark_as_sensitive: Σήμανση ως ευαίσθητο
       mark_as_unresolved: Σημειωμένο ως ανεπίλυτο
       no_one_assigned: Κανένας
       notes:
@@ -490,12 +472,15 @@ el:
         delete: Διαγραφή
         placeholder: Περιέγραψε τις ενέργειες που έγιναν, ή οποιαδήποτε άλλη ενημέρωση...
         title: Σημειώσεις
+      quick_actions_description_html: 'Κάντε μια γρήγορη ενέργεια ή μετακινηθείτε προς τα κάτω για να δείτε το αναφερόμενο περιεχόμενο:'
+      remote_user_placeholder: ο απομακρυσμένος χρήστης από %{instance}
       reopen: Ξανάνοιξε την καταγγελία
       report: 'Καταγγελία #%{id}'
       reported_account: Αναφερόμενος λογαριασμός
       reported_by: Αναφέρθηκε από
       resolved: Επιλύθηκε
       resolved_msg: Η καταγγελία επιλύθηκε επιτυχώς!
+      skip_to_actions: Μετάβαση στις ενέργειες
       status: Κατάσταση
       statuses: Αναφερόμενο περιεχόμενο
       title: Αναφορές
@@ -627,6 +612,9 @@ el:
       empty: Δεν έχετε ακόμη ορίσει κάποια προεπιλογή προειδοποίησης.
       title: Διαχείριση προκαθορισμένων προειδοποιήσεων
   admin_mailer:
+    new_appeal:
+      actions:
+        none: μια προειδοποίηση
     new_pending_account:
       body: Τα στοιχεία του νέου λογαριασμού είναι παρακάτω. Μπορείς να εγκρίνεις ή να απορρίψεις αυτή την αίτηση.
       subject: Νέος λογαριασμός προς έγκριση στο %{instance} (%{username})
@@ -707,7 +695,6 @@ el:
     status:
       account_status: Κατάσταση λογαριασμού
       confirming: Αναμονή για ολοκλήρωση επιβεβαίωσης του email.
-      functional: Ο λογαριασμός σου είναι πανέτοιμος.
       pending: Η εφαρμογή σας εκκρεμεί έγκρισης, πιθανόν θα διαρκέσει κάποιο χρόνο. Θα λάβετε email αν εγκριθεί.
       redirecting_to: Ο λογαριασμός σου είναι ανενεργός γιατί επί του παρόντος ανακατευθύνει στον %{acct}.
     too_fast: Η φόρμα υποβλήθηκε πολύ γρήγορα, προσπαθήστε ξανά.
@@ -931,6 +918,9 @@ el:
     carry_mutes_over_text: Ο/Η χρήστης μετακόμισε από το %{acct}, που είχες αποσιωπήσει.
     copy_account_note_text: 'Ο/Η χρήστης μετακόμισε από το %{acct}, ορίστε οι προηγούμενες σημειώσεις σου:'
   notification_mailer:
+    admin:
+      sign_up:
+        subject: "%{name} έχει εγγραφεί"
     digest:
       action: Δες όλες τις ειδοποιήσεις
       body: Μια σύνοψη των μηνυμάτων που έχασες από την τελευταία επίσκεψή σου στις %{since}
@@ -966,6 +956,8 @@ el:
       title: Νέα προώθηση
     status:
       subject: Ο/Η %{name} μόλις έγραψε κάτι
+    update:
+      subject: "%{name} επεξεργάστηκε μια δημοσίευση"
   notifications:
     email_events: Συμβάντα για ειδοποιήσεις μέσω email
     email_events_hint: 'Επέλεξε συμβάντα για τα οποία θέλεις να λαμβάνεις ειδοποιήσεις μέσω email:'
@@ -1131,6 +1123,16 @@ el:
       public_long: Βλέπει οποιοσδήποτε
       unlisted: Μη καταχωρημένο
       unlisted_long: Βλέπει οποιοσδήποτε, αλλά δεν καταχωρείται στις δημόσιες ροές
+  statuses_cleanup:
+    min_age:
+      '1209600': 2 weeks
+      '15778476': 6 months
+      '2629746': 1 month
+      '31556952': 1 year
+      '5259492': 2 months
+      '604800': 1 εβδομάδα
+      '63113904': 2 years
+      '7889238': 3 months
   stream_entries:
     pinned: Καρφιτσωμένο τουτ
     reblogged: προωθημένο
@@ -1254,7 +1256,6 @@ el:
       categories:
         spam: Ανεπιθύμητο
       reason: 'Αιτιολογία:'
-      review_server_policies: Αναθεώρηση πολιτικής του κόμβου
       subject:
         disable: Ο λογαριασμός σου %{acct} έχει παγώσει
         none: Προειδοποίηση προς %{acct}
@@ -1263,7 +1264,6 @@ el:
       title:
         disable: Παγωμένος λογαριασμός
         none: Προειδοποίηση
-        sensitive: Κρυμμένο πολυμέσο
         silence: Περιορισμένος λογαριασμός
         suspend: Λογαριασμός σε αναστολή
     welcome:

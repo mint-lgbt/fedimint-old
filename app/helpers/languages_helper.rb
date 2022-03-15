@@ -241,7 +241,16 @@ module LanguagesHelper
     code
   end
 
+  def valid_locale_cascade(*arr)
+    arr.each do |str|
+      locale = valid_locale_or_nil(str)
+      return locale if locale.present?
+    end
+
+    nil
+  end
+
   def valid_locale?(locale)
-    SUPPORTED_LOCALES.key?(locale.to_sym)
+    locale.present? && SUPPORTED_LOCALES.key?(locale.to_sym)
   end
 end

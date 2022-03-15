@@ -72,7 +72,6 @@ ro:
     media: Media
     moved_html: "%{name} s-a mutat la %{new_profile_link}:"
     network_hidden: Aceste informaţii nu sunt disponibile
-    never_active: Niciodată
     nothing_here: Nu există nimic aici!
     people_followed_by: Persoane pe care %{name} le urmărește
     people_who_follow: Persoane care urmăresc pe %{name}
@@ -98,7 +97,6 @@ ro:
     account_moderation_notes:
       create: Lasă o notă
       created_msg: Notă de moderare creată cu succes!
-      delete: Șterge
       destroyed_msg: Notă de moderare distrusă cu succes!
     accounts:
       add_email_domain_block: Domeniu de e-mail în lista neagră
@@ -335,7 +333,6 @@ ro:
     status:
       account_status: Starea contului
       confirming: Se așteaptă finalizarea confirmării prin e-mail.
-      functional: Contul dvs. este complet operațional.
       pending: Cererea dvs. este în curs de revizuire de către personalul nostru. Este posibil să dureze ceva timp. Veți primi un e-mail dacă cererea dvs. este aprobată.
       redirecting_to: Contul dvs. este inactiv deoarece în prezent se redirecționează către %{acct}.
     trouble_logging_in: Probleme la conectare?
@@ -712,7 +709,6 @@ ro:
       subject: Arhiva ta este gata pentru descărcare
       title: Preluare arhivă
     warning:
-      review_server_policies: Revizuiește politicile serverului
       subject:
         disable: Contul tău %{acct} a fost înghețat
         none: Avertizare pentru %{acct}

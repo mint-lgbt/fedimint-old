@@ -67,7 +67,6 @@ nl:
     media: Media
     moved_html: "%{name} is verhuisd naar %{new_profile_link}:"
     network_hidden: Deze informatie is niet beschikbaar
-    never_active: Nooit
     nothing_here: Hier is niets!
     people_followed_by: Mensen die %{name} volgen
     people_who_follow: Mensen die %{name} volgen
@@ -92,7 +91,6 @@ nl:
     account_moderation_notes:
       create: Laat een opmerking achter
       created_msg: Aanmaken van opmerking voor moderatoren geslaagd!
-      delete: Verwijderen
       destroyed_msg: Verwijderen van opmerking voor moderatoren geslaagd!
     accounts:
       add_email_domain_block: E-maildomein blokkeren
@@ -339,7 +337,6 @@ nl:
       enable: Inschakelen
       enabled: Ingeschakeld
       enabled_msg: Inschakelen van deze emoji geslaagd
-      image_hint: PNG van max. 50KB
       list: In lijst
       listed: Weergegeven
       new:
@@ -390,30 +387,13 @@ nl:
       reject_media_hint: Verwijderd lokaal opgeslagen mediabestanden en weigert deze in de toekomst te downloaden. Irrelevant voor opgeschorte domeinen
       reject_reports: Rapportages weigeren
       reject_reports_hint: Alle rapportages die vanaf dit domein komen negeren. Irrelevant voor opgeschorte domeinen
-      rejecting_media: mediabestanden worden geweigerd
-      rejecting_reports: rapportages worden geweigerd
-      severity:
-        silence: genegeerd
-        suspend: opgeschort
-      show:
-        affected_accounts:
-          one: Eén account in de database aangepast
-          other: "%{count} accounts in de database aangepast"
-        retroactive:
-          silence: Alle genegeerde accounts van dit domein niet langer negeren
-          suspend: Alle opgeschorte accounts van dit domein niet langer opschorten
-        title: Domeinblokkade voor %{domain} ongedaan maken
-        undo: Ongedaan maken
       undo: domeinblokkade ongedaan maken
       view: Domeinblokkade bekijken
     email_domain_blocks:
       add_new: Nieuwe toevoegen
       created_msg: Blokkeren e-maildomein geslaagd
       delete: Verwijderen
-      destroyed_msg: Deblokkeren e-maildomein geslaagd
       domain: Domein
-      empty: Momenteel worden er geen e-maildomeinen geblokkeerd.
-      from_html: van %{domain}
       new:
         create: Blokkeren
         title: Nieuw e-maildomein blokkeren
@@ -436,20 +416,11 @@ nl:
         clear: Bezorgfouten weghalen
         restart: Bezorging herstarten
         stop: Bezorging beëindigen
-        title: Bezorging
         unavailable: Niet beschikbaar
-        unavailable_message: Bezorging is niet beschikbaar
-        warning: Waarschuwing
-        warning_message:
-          one: Bezorgingsfout voor %{count} dag
-          other: Bezorgfout voor %{count} dagen
       delivery_available: Bezorging is mogelijk
       delivery_error_days: Dagen met bezorgfouten
       delivery_error_hint: Wanneer de bezorging voor %{count} dagen niet mogelijk is, wordt de bezorging automatisch als niet beschikbaar gemarkeerd.
       empty: Geen domeinen gevonden.
-      known_accounts:
-        one: "%{count} bekend account"
-        other: "%{count} bekende accounts"
       moderation:
         all: Alles
         limited: Beperkt
@@ -745,7 +716,6 @@ nl:
     status:
       account_status: Accountstatus
       confirming: Aan het wachten totdat de e-mail is bevestigd.
-      functional: Jouw account is volledig operationeel.
       pending: Jouw aanvraag moet nog worden beoordeeld door een van onze medewerkers. Dit kan misschien eventjes duren. Je ontvangt een e-mail wanneer jouw aanvraag is goedgekeurd.
       redirecting_to: Jouw account is inactief omdat het momenteel wordt doorverwezen naar %{acct}.
     too_fast: Formulier is te snel ingediend. Probeer het nogmaals.
@@ -1327,7 +1297,6 @@ nl:
       subject: Bevestig de inlogpoging
       title: Inlogpoging
     warning:
-      review_server_policies: Serverbeleid bekijken
       subject:
         disable: Jouw account %{acct} is bevroren
         none: Waarschuwing voor %{acct}

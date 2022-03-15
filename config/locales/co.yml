@@ -69,7 +69,6 @@ co:
     media: Media
     moved_html: "%{name} hà cambiatu di contu, avà hè nant’à %{new_profile_link}:"
     network_hidden: St'infurmazione ùn hè micca dispunibule
-    never_active: Mai
     nothing_here: Ùn c’hè nunda quì!
     people_followed_by: Seguitati da %{name}
     people_who_follow: Seguitanu %{name}
@@ -94,7 +93,6 @@ co:
     account_moderation_notes:
       create: Creà una nota
       created_msg: Nota di muderazione creata!
-      delete: Toglie
       destroyed_msg: Nota di muderazione sguassata!
     accounts:
       add_email_domain_block: Mette u duminiu e-mail in lista nera
@@ -350,7 +348,6 @@ co:
       enable: Attivà
       enabled: Attivate
       enabled_msg: L’emoji hè stata attivata
-      image_hint: PNG di 50Ko o menu
       list: Listà
       listed: Listata
       new:
@@ -410,30 +407,13 @@ co:
       reject_media_hint: Sguassa tutti i media caricati è ricusa caricamenti futuri. Inutile per una suspensione
       reject_reports: Righjittà i riporti
       reject_reports_hint: Ignurà tutti i signalamenti chì venenu d'issu duminiu. Senz'oghjettu pè e suspensione
-      rejecting_media: righjettu di i fugliali media
-      rejecting_reports: righjettu di i signalamenti
-      severity:
-        silence: silenzatu
-        suspend: suspesu
-      show:
-        affected_accounts:
-          one: Un contu tuccatu indè a database
-          other: "%{count} conti tuccati indè a database"
-        retroactive:
-          silence: Ùn silenzà più i conti affettati di stu duminiu
-          suspend: Ùn suspende più i conti affettati di stu duminiu
-        title: Ùn bluccà più u duminiu %{domain}
-        undo: Annullà
       undo: Annullà u blucchime di duminiu
       view: Vede blucchime di duminiu
     email_domain_blocks:
       add_new: Aghjunghje
       created_msg: U blucchime di u duminiu d’e-mail hè attivu
       delete: Toglie
-      destroyed_msg: U blucchime di u duminiu d’e-mail ùn hè più attivu
       domain: Duminiu
-      empty: Ùn c'hè manc'un duminiu d'email in lista nera.
-      from_html: da %{domain}
       new:
         create: Creà un blucchime
         title: Nova iscrizzione nant’a lista nera e-mail
@@ -455,20 +435,11 @@ co:
         clear: Sguassà l'errori di distribuzione
         restart: Riprincipià a distribuzione
         stop: Firmà a distribuzione
-        title: Distribuzione
         unavailable: Indispunibule
-        unavailable_message: Distribuzione micca dispunibule
-        warning: Avertimentu
-        warning_message:
-          one: Errore di distribuzione per %{count} ghjornu
-          other: Errore di distribuzione per %{count} ghjorni
       delivery_available: Distribuzione dispunibule
       delivery_error_days: Ghjorni d'errori di a distribuzione
       delivery_error_hint: S'ellu ùn si pò distribuì à u duminiu per %{count} ghjorni, sarà autumaticamente marcatu cum'è indistribuibile.
       empty: Mancun duminiu trovu.
-      known_accounts:
-        one: "%{count} contu cunnisciutu"
-        other: "%{count} conti cunnisciuti"
       moderation:
         all: Tuttu
         limited: Limitatu
@@ -778,7 +749,6 @@ co:
     status:
       account_status: Statutu di u contu
       confirming: In attesa di a cumplezzione di a cunfirmazione di l'e-mail.
-      functional: U vostru contu hè uperaziunale.
       pending: A vostra dumanda hè in attesa di rivista da a squadra di muderazione. Quessa pò piglià un certu tempu. Avete da riceve un'e-mail s'ella hè appruvata.
       redirecting_to: U vostru contu hè inattivu perchè riindirizza versu %{acct}.
     too_fast: Furmulariu mandatu troppu prestu, ripruvate.
@@ -1262,6 +1232,7 @@ co:
       '2629746': 1 mese
       '31556952': 1 annu
       '5259492': 2 mesi
+      '604800': 1 week
       '63113904': 2 anni
       '7889238': 3 mesi
     min_age_label: Età minima
@@ -1393,7 +1364,6 @@ co:
       subject: Cunfirmate u tentativu di cunnessione
       title: Tentativu di cunnessione
     warning:
-      review_server_policies: Leghje e pulitiche di u servore
       subject:
         disable: U vostru contu %{acct} hè statu ghjacciatu
         none: Avertimentu pè %{acct}

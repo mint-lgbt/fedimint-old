@@ -69,7 +69,6 @@ pt-BR:
     media: Mídia
     moved_html: "%{name} se mudou para %{new_profile_link}:"
     network_hidden: Informação indisponível
-    never_active: Nunca
     nothing_here: Nada aqui!
     people_followed_by: Pessoas que %{name} segue
     people_who_follow: Pessoas que seguem %{name}
@@ -94,7 +93,6 @@ pt-BR:
     account_moderation_notes:
       create: Deixar nota
       created_msg: Nota de moderação criada com sucesso!
-      delete: Excluir
       destroyed_msg: Nota de moderação excluída com sucesso!
     accounts:
       add_email_domain_block: Adicionar o domínio de e-mail à lista negra
@@ -113,6 +111,7 @@ pt-BR:
       confirm: Confirmar
       confirmed: Confirmado
       confirming: Confirmando
+      custom: Personalizar
       delete: Excluir dados
       deleted: Excluído
       demote: Rebaixar
@@ -204,6 +203,7 @@ pt-BR:
       silenced: Silenciado
       statuses: Toots
       subscribe: Inscrever-se
+      suspend: Suspender
       suspended: Banido
       suspension_irreversible: Os dados desta conta foram excluídos de forma irreversível. Você pode remover a suspensão da conta para torná-la utilizável, mas ela não irá recuperar nenhum dado que ela possuía anteriormente.
       suspension_reversible_hint_html: A conta foi suspensa e os dados serão totalmente removidos em %{date}. Até lá, a conta pode ser restaurada sem nenhum efeito negativo. Se você deseja remover todos os dados da conta imediatamente, você pode fazer isso abaixo.
@@ -254,6 +254,7 @@ pt-BR:
         enable_user: Ativar usuário
         memorialize_account: Converter conta em memorial
         promote_user: Promover usuário
+        reject_appeal: Rejeitar recurso
         reject_user: Rejeitar Usuário
         remove_avatar_user: Remover Avatar
         reopen_report: Reabrir Relatório
@@ -272,6 +273,7 @@ pt-BR:
         update_domain_block: Atualizar bloqueio de domínio
         update_status: Editar Status
       actions:
+        approve_appeal_html: "%{name} aprovou o recurso de decisão de moderação de %{target}"
         assigned_to_self_report_html: "%{name} atribuiu o relatório %{target} para si"
         change_email_user_html: "%{name} alterou o endereço de e-mail do usuário %{target}"
         confirm_user_html: "%{name} confirmou o endereço de e-mail do usuário %{target}"
@@ -357,7 +359,6 @@ pt-BR:
       enable: Ativar
       enabled: Ativado
       enabled_msg: Emoji ativado com sucesso
-      image_hint: PNG de até 50KB
       list: Listar
       listed: Listado
       new:
@@ -387,6 +388,9 @@ pt-BR:
       top_languages: Línguas mais ativas
       top_servers: Servidores mais ativos
       website: Site
+    disputes:
+      appeals:
+        title: Apelações
     domain_allows:
       add_new: Permitir domínio
       created_msg: Domínio foi permitido
@@ -418,32 +422,16 @@ pt-BR:
       reject_media_hint: Remove arquivos de mídia armazenados localmente e recusa fazer download de qualquer um no futuro. Irrelevante para suspensões
       reject_reports: Rejeitar denúncias
       reject_reports_hint: Ignora todas as denúncias vindo deste domínio. Irrelevante para suspensões
-      rejecting_media: rejeitando arquivos de mídia
-      rejecting_reports: rejeitando denúncias
-      severity:
-        silence: silenciado
-        suspend: banido
-      show:
-        affected_accounts:
-          one: Uma conta no banco de dados foi afetada
-          other: "%{count} contas no banco de dados foram afetadas"
-        retroactive:
-          silence: Dessilenciar contas existentes afetadas deste domínio
-          suspend: Remover a suspensão das contas afetadas deste domínio
-        title: Desfazer bloqueio de domínio para %{domain}
-        undo: Desfazer
       undo: Desfazer bloqueio de domínio
       view: Ver domínios bloqueados
     email_domain_blocks:
       add_new: Adicionar novo
       created_msg: Domínio de e-mail adicionado à lista negra com sucesso
       delete: Excluir
-      destroyed_msg: Domínio de e-mail excluído da lista negra com sucesso
       domain: Domínio
-      empty: Nenhum domínio de e-mail atualmente bloqueado.
-      from_html: de %{domain}
       new:
         create: Adicionar domínio
+        resolve: Resolver domínio
         title: Nova entrada de lista negra de e-mail
       title: Lista de negra de e-mail
     follow_recommendations:
@@ -464,15 +452,9 @@ pt-BR:
         clear: Limpar erros de entrega
         restart: Reiniciar a entrega
         stop: Parar entrega
-        title: Entrega
         unavailable: Indisponível
-        unavailable_message: Envio indisponível
-        warning: Aviso
       delivery_available: Envio disponível
       empty: Nenhum domínio encontrado.
-      known_accounts:
-        one: "%{count} conta conhecida"
-        other: "%{count} contas conhecidas"
       moderation:
         all: Todos
         limited: Limitados
@@ -541,7 +523,6 @@ pt-BR:
         other_description_html: Veja mais opções para controlar o comportamento da conta e personalizar a comunicação com a conta reportada.
         silence_description_html: O perfil será visível apenas para aqueles que já o seguem ou que o procuram manualmente, limitando severamente seu alcance. Pode ser sempre revertido.
         suspend_description_html: O perfil e todo o seu conteúdo ficarão inacessíveis até que seja eventualmente excluído. Interagir com a conta será impossível. Reversível dentro de 30 dias.
-      actions_description_html: 'Se remover o conteúdo ofensivo acima for insuficiente:'
       add_to_report: Adicionar mais ao relatório
       are_you_sure: Você tem certeza?
       assign_to_self: Pegar
@@ -553,7 +534,7 @@ pt-BR:
         none: Nenhum
       comment_description_html: 'Para fornecer mais informações, %{name} escreveu:'
       created_at: Denunciado
-      delete_and_resolve: Apagar e resolver
+      delete_and_resolve: Excluir mensagens
       forwarded: Encaminhados
       forwarded_to: Encaminhado para %{domain}
       mark_as_resolved: Marcar como resolvido
@@ -567,12 +548,14 @@ pt-BR:
         placeholder: Descreva que ações foram tomadas, ou quaisquer outras atualizações relacionadas…
         title: Notas
       notes_description_html: Visualize e deixe anotações para outros moderadores e para o seu "eu" do futuro
+      quick_actions_description_html: 'Tome uma ação rápida ou role para baixo para ver o conteúdo relatado:'
       reopen: Reabrir denúncia
       report: 'Denúncia #%{id}'
       reported_account: Conta denunciada
       reported_by: Denunciada por
       resolved: Resolvido
       resolved_msg: Denúncia resolvida com sucesso!
+      skip_to_actions: Pular para ações
       status: Situação
       statuses: Conteúdo denunciado
       statuses_description_html: Conteúdo Ofensivo será citado em comunicação com a conta relatada
@@ -683,6 +666,9 @@ pt-BR:
       destroyed_msg: Upload do site excluído com sucesso!
     statuses:
       back_to_account: Voltar para página da conta
+      back_to_report: Voltar às denúncias
+      batch:
+        report: Denunciar
       deleted: Excluídos
       media:
         title: Mídia
@@ -716,6 +702,10 @@ pt-BR:
         rejected: Links deste editor não vão tender
         title: Editor
       rejected: Rejeitado
+      statuses:
+        allow: Permitir postagem
+        allow_account: Permitir autor
+        title: Publicações em alta
       tags:
         current_score: Pontuação atual %{score}
         dashboard:
@@ -732,9 +722,6 @@ pt-BR:
         trending_rank: 'Em alta #%{rank}'
         usable: Pode ser usado
         usage_comparison: Usado %{today} vezes hoje, em comparação com %{yesterday} de ontem
-        used_by_over_week:
-          one: Usado por uma pessoa na última semana
-          other: Usado por %{count} pessoas na última semana
       title: Em alta
     warning_presets:
       add_new: Adicionar novo
@@ -750,10 +737,6 @@ pt-BR:
       body: "%{reporter} denunciou %{target}"
       body_remote: Alguém da instância %{domain} reportou %{target}
       subject: Nova denúncia sobre %{instance} (#%{id})
-    new_trending_links:
-      no_approved_links: Atualmente, não há links de tendência aprovados.
-    new_trending_tags:
-      body: 'As seguintes hashtags estão em alta hoje, mas não foram avaliadas anteriormente. Elas não serão exibidas publicamente, a menos que você as aprove:'
   aliases:
     add_new: Criar alias
     created_msg: Um novo alias foi criado com sucesso. Agora você pode iniciar a mudança da conta antiga.
@@ -826,7 +809,6 @@ pt-BR:
     status:
       account_status: Status da conta
       confirming: Confirmação por e-mail pendente.
-      functional: Sua conta está totalmente operacional.
       pending: Sua solicitação está com revisão pendente por parte de nossa equipe. Você receberá um e-mail se ela for aprovada.
       redirecting_to: Sua conta está inativa porque atualmente está redirecionando para %{acct}.
     too_fast: O formulário foi enviado muito rapidamente, tente novamente.
@@ -890,6 +872,13 @@ pt-BR:
     directory: Diretório de perfis
     explanation: Descobrir usuários baseado em seus interesses
     explore_mastodon: Explore o %{title}
+  disputes:
+    strikes:
+      title_actions:
+        none: Aviso
+        sensitive: Marcar a conta como sensível
+        silence: Limitação da conta
+        suspend: Suspensão de conta
   domain_validator:
     invalid_domain: não é um nome de domínio válido
   errors:
@@ -1324,6 +1313,7 @@ pt-BR:
       '2629746': 1 mês
       '31556952': 1 ano
       '5259492': 2 meses
+      '604800': 1 semana
       '63113904': 2 anos
       '7889238': 3 meses
     min_age_label: Validade
@@ -1444,6 +1434,11 @@ pt-BR:
     recovery_instructions_html: Se você perder acesso ao seu celular, você pode usar um dos códigos de recuperação abaixo para acessar a sua conta. <strong>Mantenha os códigos de recuperação em um local seguro</strong>. Por exemplo, você pode imprimi-los e guardá-los junto com outros documentos importantes.
     webauthn: Chaves de segurança
   user_mailer:
+    appeal_approved:
+      action: Acessar perfil
+      title: Contestação aprovada
+    appeal_rejected:
+      title: Contestação rejeitada
     backup_ready:
       explanation: Você pediu um backup completo da sua conta no Mastodon. E agora está pronto para ser baixado!
       subject: Seu arquivo está pronto para ser baixado
@@ -1455,14 +1450,14 @@ pt-BR:
       subject: Por favor, confirme a tentativa de acesso
       title: Tentativa de acesso
     warning:
+      appeal: Enviar uma contestação
       categories:
         spam: Spam
         violation: O conteúdo viola as seguintes diretrizes da comunidade
       explanation:
+        disable: Você não poderá mais usar a sua conta, mas o seu perfil e outros dados permanecem intactos. Você pode solicitar um backup dos seus dados, mudar as configurações ou excluir sua conta.
         sensitive: A partir de agora, todos os seus arquivos de mídia enviados serão marcados como confidenciais e escondidos por trás de um aviso de clique.
-      get_in_touch: Se você acredita que isso é um erro, você pode responder a este e-mail para entrar em contato com a equipe de %{instance}.
       reason: 'Motivo:'
-      review_server_policies: Revisar as políticas da instância
       subject:
         disable: Sua conta %{acct} foi bloqueada
         none: Aviso para %{acct}
@@ -1472,7 +1467,6 @@ pt-BR:
         delete_statuses: Publicações removidas
         disable: Conta bloqueada
         none: Aviso
-        sensitive: Mídia oculta
         silence: Conta silenciada
         suspend: Conta banida
     welcome:
