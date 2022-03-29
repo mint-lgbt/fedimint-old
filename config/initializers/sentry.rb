@@ -9,5 +9,5 @@ Sentry.init do |config|
   # We recommend adjusting this value in production
   config.traces_sample_rate = 1.0
 
-  # config.release = Mastodon::Version.version_with_tag
+  config.release = Mastodon::Version.version_with_tag
 end
