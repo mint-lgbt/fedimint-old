@@ -20,19 +20,19 @@ function main() {
     }
   }
 
+  Sentry.init({
+    dsn: 'https://7071f9390c174831b31d63faeaa719b3@s.femgit.me/6',
+    integrations: [new BrowserTracing()],
+  
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+  });
+
   ready(() => {
     const mountNode = document.getElementById('mastodon');
     const props = JSON.parse(mountNode.getAttribute('data-props'));
-
-    Sentry.init({
-      dsn: 'https://7071f9390c174831b31d63faeaa719b3@s.femgit.me/6',
-      integrations: [new BrowserTracing()],
-    
-      // Set tracesSampleRate to 1.0 to capture 100%
-      // of transactions for performance monitoring.
-      // We recommend adjusting this value in production
-      tracesSampleRate: 1.0,
-    });
 
     ReactDOM.render(<Mastodon {...props} />, mountNode);
     store.dispatch(setupBrowserNotifications());
