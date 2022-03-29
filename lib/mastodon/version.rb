@@ -53,6 +53,10 @@ module Mastodon
       end
     end
 
+    def version_with_tag
+      [to_s, '+', source_tag].join
+    end
+
     def user_agent
       @user_agent ||= "#{HTTP::Request::USER_AGENT} (Fedimint/#{Version}; +http#{Rails.configuration.x.use_https ? 's' : ''}://#{Rails.configuration.x.web_domain}/)"
     end
