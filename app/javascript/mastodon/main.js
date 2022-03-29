@@ -1,6 +1,8 @@
 import * as registerPushNotifications from './actions/push_notifications';
 import { setupBrowserNotifications } from './actions/notifications';
 import { default as Mastodon, store } from './containers/mastodon';
+import { BrowserTracing } from '@sentry/tracing';
+import * as Sentry from '@sentry/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ready from './ready';
@@ -21,6 +23,16 @@ function main() {
   ready(() => {
     const mountNode = document.getElementById('mastodon');
     const props = JSON.parse(mountNode.getAttribute('data-props'));
+
+    Sentry.init({
+      dsn: 'https://7071f9390c174831b31d63faeaa719b3@s.femgit.me/6',
+      integrations: [new BrowserTracing()],
+    
+      // Set tracesSampleRate to 1.0 to capture 100%
+      // of transactions for performance monitoring.
+      // We recommend adjusting this value in production
+      tracesSampleRate: 1.0,
+    });
 
     ReactDOM.render(<Mastodon {...props} />, mountNode);
     store.dispatch(setupBrowserNotifications());

@@ -157,3 +157,6 @@ gem 'connection_pool', require: false
 gem 'xorcist', '~> 1.1'
 
 gem 'hcaptcha', '~> 7.1'
+
+gem 'sentry-rails', '~> 5.2', '>= 5.2.1'
+gem 'sentry-ruby', '~> 5.2', '>= 5.2.1'
