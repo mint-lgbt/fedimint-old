@@ -7,7 +7,7 @@ Sentry.init do |config|
   # Set tracesSampleRate to 1.0 to capture 100%
   # of transactions for performance monitoring.
   # We recommend adjusting this value in production
-  config.traces_sample_rate = 0.75
+  config.traces_sample_rate = 0.25
 
   config.release = Mastodon::Version.version_with_tag
 end
