@@ -11,8 +11,8 @@ gl:
     apps: Aplicacións móbiles
     apps_platforms: Emprega Mastodon dende iOS, Android e outras plataformas
     browse_directory: Mira o directorio e filtra por intereses
-    browse_local_posts: Navega polas publicacións públicas deste servidor en tempo real
-    browse_public_posts: Navega polas publicacións públicas de Mastodon en tempo real
+    browse_local_posts: Unha ollada aos últimos comentarios públicos neste servidor
+    browse_public_posts: Cronoloxía en directo cos comentarios públicos en Mastodon
     contact: Contacto
     contact_missing: Non establecido
     contact_unavailable: Non dispoñíbel
@@ -31,14 +31,14 @@ gl:
     privacy_policy: Política de privacidade
     rules: Regras do servidor
     rules_html: 'Aquí tes un resumo das regras que debes seguir se queres ter unha conta neste servidor de Mastodon:'
-    see_whats_happening: Ver o que está a acontecer
+    see_whats_happening: Mira o que acontece
     server_stats: 'Estatísticas do servidor:'
     source_code: Código fonte
     status_count_after:
       one: publicación
       other: publicacións
     status_count_before: Que publicaron
-    tagline: Segue ás túas amizades e coñece novas
+    tagline: Rede social descentralizada
     terms: Termos do servizo
     unavailable_content: Contido non dispoñíbel
     unavailable_content_description:
@@ -428,6 +428,7 @@ gl:
       destroyed_msg: Desfíxose o bloqueo de dominio
       domain: Dominio
       edit: Editar bloqueo de dominio
+      existing_domain_block: Xa tes establecidas restricións maiores para %{name}.
       existing_domain_block_html: Xa impuxeches límites máis estrictos a %{name}, precisas <a href="%{unblock_url}">desbloquealo</a> primeiro.
       new:
         create: Crear bloqueo
@@ -851,6 +852,26 @@ gl:
       edit_preset: Editar aviso preestablecido
       empty: Non definiches os avisos prestablecidos.
       title: Xestionar avisos preestablecidos
+    webhooks:
+      add_new: Engadir punto de extremo
+      delete: Eliminar
+      description_html: Un <strong>webhook</strong> permítelle a Mastodon enviar <strong>notificacións en tempo real</strong> á túa aplicación acerca dos eventos elexidos e así, a aplicación <strong>activará automáticamente</strong> a súa programación.
+      disable: Desactivar
+      disabled: Desactivado
+      edit: Editar extremo
+      empty: Non tes configurado ningún punto extremo para o webhook.
+      enable: Activar
+      enabled: Activo
+      enabled_events:
+        one: 1 evento activado
+        other: "%{count} eventos activados"
+      events: Eventos
+      new: Novo webhook
+      rotate_secret: Rotar segredo
+      secret: Segredo de acceso
+      status: Estado
+      title: Webhooks
+      webhook: Webhook
   admin_mailer:
     new_appeal:
       actions:
@@ -915,13 +936,12 @@ gl:
   applications:
     created: Creouse con éxito este aplicativo
     destroyed: Eliminouse con éxito o aplicativo
-    invalid_url: A URL proporcionada non é válida
     regenerate_token: Votar a xenerar o testemuño de acceso
     token_regenerated: Rexenerouse con éxito o testemuño de acceso
     warning: Ten moito tino con estos datos. Non os compartas nunca con ninguén!
     your_token: O seu testemuño de acceso
   auth:
-    apply_for_account: Solicite un convite
+    apply_for_account: Solicita un convite
     change_password: Contrasinal
     checkbox_agreement_html: Acepto as <a href="%{rules_path}" target="_blank">regras do servidor</a> e os <a href="%{terms_path}" target="_blank">termos do servizo</a>
     checkbox_agreement_without_rules_html: Acepto os <a href="%{terms_path}" target="_blank">termos do servizo</a>
@@ -934,7 +954,7 @@ gl:
     didnt_get_confirmation: Non recibiches as instruccións de confirmación?
     dont_have_your_security_key: "¿Non tes a túa chave de seguridade?"
     forgot_password: Non lembras o contrasinal?
-    invalid_reset_password_token: O testemuño para restablecer o contrasinal non é válido ou caducou. Por favor solicite un novo.
+    invalid_reset_password_token: O token para restablecer o contrasinal non é válido ou caducou. Por favor solicita un novo.
     link_to_otp: Escribe o código do segundo factor do móbil ou un código de recuperación
     link_to_webauth: Usa o teu dispositivo de chave de seguridade
     log_in_with: Accede con
@@ -1525,6 +1545,54 @@ gl:
   tags:
     does_not_match_previous_name: non concorda co nome anterior
   terms:
+    body_html: |
+      <h2>Privacidade</h2>
+            <h3 id="collect">Que información recollemos?</h3>
+            <ul>
+            <li><em>Información básica da conta</em>: Se te rexistras neste servidor, pedirémosche un nome de usuaria, un enderezo de correo electrónico e un contrasinal. De xeito adicional tamén poderás incluír información como un nome público e biografía, tamén subir unha fotografía de perfil e unha imaxe para a cabeceira. O nome de usuaria, o nome público, a biografía e as imaxes de perfil e cabeceira sempre se mostran de xeito público.</li>
+            <li><em>Publicacións, seguimento e outra información pública</em>: A lista das persoas que segues é unha lista pública, o mesmo acontece coas persoas que te seguen. Cando envías unha mensaxe, a data e hora gárdanse así como a aplicación que utilizaches para enviar a mensaxe. As publicacións poderían incluír ficheiros multimeda, como fotografías e vídeos. As publicacións públicas e as non listadas están dispoñibles de xeito público. Cando destacas unha publicación no teu perfil tamén é pública. As publicacións son enviadas as túas seguidoras, nalgúns casos pode acontecer que estén en diferentes servidores e gárdanse copias neles. Cando eleminas unha publicación tamén se envía ás túas  seguidoras. A acción de volver a publicar ou marcar como favorita outra publicación sempre é pública.</li>
+            <li><em>Mensaxes directas e só para seguidoras</em>: Todas as mensaxes gárdanse e procésanse no servidor. As mensaxes só para seguidoras son entregadas ás túas seguidoras e ás usuarias que son mencionadas nelas, e as mensaxes directas entréganse só ás usuarias mencionadas en elas. Nalgúns casos esto implica que son entregadas a diferentes servidores e gárdanse copias alí. Facemos un esforzo honesto para limitar o acceso a esas publicacións só ás persoas autorizadas, pero outros servidores poderían non ser tan escrupulosos. Polo tanto, é importante revisar os servidores onde se hospedan as túas seguidoras. Nos axustes podes activar a opción de aprobar ou rexeitar novas seguidoras de xeito manual. <em>Ten en conta que a administración do servidor e todos os outros servidores implicados poden ver as mensaxes.</em>, e as destinatarias poderían facer capturas de pantalla, copiar e volver a compartir as mensaxes. <em>Non compartas información sensible en Mastodon.</em></li>
+            <li><em>IPs e outros metadatos</em>: Cando te conectas, gravamos o IP desde onde te conectas, así como o nome da aplicación desde onde o fas. Todas as sesións conectadas están dispoñibles para revisar e revogar nos axustes. O último enderezo IP utilizado gárdase ate por 12 meses. Tamén poderiamos gardar informes do servidor que inclúan o enderezo IP de cada petición ao servidor.</li>
+            </ul>
+            <hr class="spacer" />
+            <h3 id="use">De que xeito utilizamos os teus datos?</h3>
+            <p>Toda a información que recollemos podería ser utilizada dos seguintes xeitos:</p>
+            <ul>
+            <li>Para proporcionar a funcionabiliade básica de Mastodon. Só podes interactuar co contido de outra xente e publicar o teu propio contido se inicias sesión. Por exemplo, poderías seguir outra xente e ver as súas publicacións combinadas nunha cronoloxía de inicio personalizada.</li>
+            <li>Para axudar a moderar a comunidade, por exemplo comparando o teu enderezo IP con outros coñecidos para evitar esquivar os rexeitamentos ou outras infraccións.</li>
+            <li>O enderezo de correo electrónico que nos proporcionas podería ser utilizado para enviarche información, notificacións sobre outra xente que interactúa coas túas publicacións ou che envía mensaxes, e para responder a consultas, e/ou outras cuestións ou peticións.</li>
+            </ul>
+            <hr class="spacer" />
+            <h3 id="protect">Como proxetemos os teus datos?</h3>
+            <p>Implementamos varias medidas de seguridade para protexer os teus datos persoais cando introduces, envías ou accedes á túa información persoal. Entre outras medidas, a túa sesión de navegación, así como o tráfico entre as túas aplicacións e o API están aseguradas mediante SSL, e o teu contrasinal está camuflado utilizando un algoritmo potente de unha sóa vía. Podes habilitar a autenticación por dobre factor para protexer aínda máis o acceso á túa conta.</p>
+            <hr class="spacer" />
+            <h3 id="data-retention">Cal é a nosa política de retención de datos?</h3>
+            <p>Faremos un sincero esforzo en:</p>
+            <ul>
+            <li>Protexer informes do servidor que conteñan direccións IP das peticións ao servidor, actualmente estos informes gárdanse por non máis de 90 días.</li>
+            <li>Reter os enderezos IP asociados con usuarias rexistradas non máis de 12 meses.</li>
+            </ul>
+            <p>Podes solicitar e descargar un ficheiro cos teus contidos, incluíndo publicacións, anexos multimedia, imaxes de perfil e imaxe da cabeceira.</p>
+            <p>En todo momento podes eliminar de xeito irreversible a túa conta.</p>
+            <hr class="spacer"/>
+            <h3 id="cookies">Utilizamos cookies?</h3>
+            <p>Si. As cookies son pequenos ficheiros que un sitio web ou o provedor de servizo transfiren ao disco duro da túa computadora a través do navegador web (se o permites). Estas cookies posibilitan ao sitio web recoñecer o teu navegador e, se tes unha conta rexistrada, asocialo con dita conta.</p>
+            <p>Utilizamos cookies para comprender e gardar as túas preferencias para futuras visitas.</p>
+            <hr class="spacer" />
+            <h3 id="disclose">Entregamos algunha información a terceiras partes alleas?</h3>
+            <p>Non vendemos, negociamos ou transferimos de ningún xeito a terceiras partes alleas a túa información identificativa persoal. Esto non inclúe terceiras partes de confianza que nos axudan a xestionar o sitio web, a xestionar a empresa, ou darche servizo se esas partes aceptan manter esa información baixo confidencialidade. Poderiamos liberar esa información se cremos que eso da cumplimento axeitado a lei, reforza as políticas do noso sitio ou protexe os nosos, e de outros, dereitos, propiedade ou seguridade.</p>
+            <p>O teu contido público podería ser descargado por outros servidores na rede. As túas publicacións públicas e para só seguidoras son entregadas aos servidores onde residen as túas seguidoras na rede, e as mensaxes directas son entregadas aos servidores das destinatarias sempre que esas seguidoras ou destinatarios residan en servidores distintos de este.</p>
+            <p>Cado autorizas a unha aplicación a utilizar a túa conta, dependendo do ámbito dos permisos que autorices, podería acceder a información pública de perfil, á lista de seguimento, ás túas seguidoras, as túas listas, todas as túas publicacións, as publicacións favoritas. As aplicacións non poden acceder nunca ao teu enderezo de correo nin ao teu contrasinal.</p>
+            <hr class="spacer" />
+            <h3 id="children">Utilización do sitio web por menores</h3>
+            <p>Se este servidor está na UE ou no EEE: a nosa web, productos e servizos están dirixidos a persoas de 16 ou máis anos. Se tes menos de 16 anos, a requerimento da GDPR (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>) non uses esta web.</p>
+            <p>Se este servidor está nos EEUU: a nosa web, productos e servizos están dirixidos a persoas de 13 ou máis anos. Se non tes 13 anos de idade, a requerimento de COPPA (<a href="https://en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act">Children's Online Privacy Protection Act</a>) non uses esta web.</p>
+            <p>Os requerimentos legais poden ser diferentes se este servidor está baixo outra xurisdición.</p>
+            <hr class="spacer" />
+            <h3 id="changes">Cambios na nosa política de privacidade</h3>
+            <p>Se decidimos cambiar a nosa política de privacidade publicaremos os cambios nesta páxina.</p>
+            <p>Este documento ten licenza CC-BY-SA. Actualizouse o 26 de maio de 2022.</p>
+            <p>Adaptado do orixinal <a href="https://github.com/discourse/discourse">política de privacidade de Discourse</a>.</p>
     title: "%{instance} Termos do Servizo e Política de Intimidade"
   themes:
     contrast: Mastodon (Alto contraste)
