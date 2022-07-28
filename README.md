@@ -1,6 +1,6 @@
 # Fedimint [![CircleCI](https://img.shields.io/circleci/build/gh/mint-lgbt/fedimint)](https://circleci.com/gh/mint-lgbt/fedimint) [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/mint-lgbt/fedimint)](https://codeclimate.com/github/mint-lgbt/fedimint)
 
-A general-purpose microblogging server.
+A general-purpose microblogging server. **No longer maintained**.
 
 ## Credits
 
